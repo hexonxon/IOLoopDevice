@@ -27,52 +27,52 @@
 
 static io_connect_t open_controller(void)
 {
-	CFMutableDictionaryRef dict = IOServiceMatching(kLoopControllerMatchKey);
-	if(!dict) {
-		return IO_OBJECT_NULL;
-	}
+    CFMutableDictionaryRef dict = IOServiceMatching(kLoopControllerMatchKey);
+    if(!dict) {
+        return IO_OBJECT_NULL;
+    }
 	
-	io_iterator_t iter;
-	kern_return_t rc = IOServiceGetMatchingServices(kIOMasterPortDefault, dict, &iter);
-	if(KERN_SUCCESS != rc) {
-		return IO_OBJECT_NULL;
-	}
+    io_iterator_t iter;
+    kern_return_t rc = IOServiceGetMatchingServices(kIOMasterPortDefault, dict, &iter);
+    if(KERN_SUCCESS != rc) {
+        return IO_OBJECT_NULL;
+    }
 	
-	io_service_t serv = IOIteratorNext(iter);
-	IOObjectRelease(iter);
+    io_service_t serv = IOIteratorNext(iter);
+    IOObjectRelease(iter);
     
-	if(serv == IO_OBJECT_NULL) {
-		return IO_OBJECT_NULL;
-	}
+    if(serv == IO_OBJECT_NULL) {
+        return IO_OBJECT_NULL;
+    }
     
-	io_connect_t port;
-	rc = IOServiceOpen(serv, mach_task_self(), 0, &port);
-	IOObjectRelease(serv);
+    io_connect_t port;
+    rc = IOServiceOpen(serv, mach_task_self(), 0, &port);
+    IOObjectRelease(serv);
     
-	if(KERN_SUCCESS != rc) {
-		return IO_OBJECT_NULL;
-	}
+    if(KERN_SUCCESS != rc) {
+        return IO_OBJECT_NULL;
+    }
 	
-	return port;
+    return port;
 }
 
 
 static void close_controller(io_connect_t port)
 {
-	IOServiceClose(port);
+    IOServiceClose(port);
 }
 
 
 static IOReturn controller_ctl(int ctlcode, void* data_in, size_t insize, void* data_out, size_t outsize)
 {
-	io_connect_t port = open_controller();
-	if(IO_OBJECT_NULL == port) {
-		return kIOReturnNotAttached;
-	}
+    io_connect_t port = open_controller();
+    if(IO_OBJECT_NULL == port) {
+        return kIOReturnNotAttached;
+    }
 	
-	uint64_t ctl_u64 = ctlcode;
-	
-	int rc = IOConnectCallMethod(port, 
+    uint64_t ctl_u64 = ctlcode;
+
+    int rc = IOConnectCallMethod(port, 
                                  kLoopCTL_Magic, 
                                  &ctl_u64, 1, 
                                  data_in, insize, 
@@ -196,7 +196,7 @@ static void requestPortCallback(CFMachPortRef port, void *msg, CFIndex size, voi
 
     printf("New %s request arrived: file %s, offset %llu, size %lu, buffer %p\n", 
            (request->data.direction == kLoopIODirection_Read ? "read" : "write"),
-          context->file, offset, nbytes, buffer);
+           context->file, offset, nbytes, buffer);
 
     if (request->data.direction == kLoopIODirection_Read) {
         
@@ -309,17 +309,12 @@ static void usage(void)
 int main(int argc, char** argv)
 {
     int ro = 0;
-    const char* password = NULL;
     char opt;
     
-    while (-1 != (opt = getopt(argc, argv, "r:p:"))) {
+    while (-1 != (opt = getopt(argc, argv, "r:"))) {
         switch (opt) {
         case 'r': 
             ro = 1; 
-            break;
-                
-        case 'p':
-            password = optarg;
             break;
                 
         default: 
