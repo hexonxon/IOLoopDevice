@@ -353,32 +353,33 @@ IOReturn org_acme_LoopDriverClient::externalMethod(uint32_t selector, IOExternal
     struct IOExternalMethodDispatch d = { 
         sIOCTL, 
         arguments->scalarInputCount,
-		arguments->structureInputSize,
-		arguments->scalarOutputCount,
-		arguments->structureOutputSize 
+        arguments->structureInputSize,
+        arguments->scalarOutputCount,
+        arguments->structureOutputSize 
     };
     
-	target = mDriver;
-	return IOUserClient::externalMethod(selector, arguments, &d, target, reference);
+    target = mDriver;
+    return IOUserClient::externalMethod(selector, arguments, &d, target, reference);
 }
 
 
 IOReturn org_acme_LoopDriverClient::sIOCTL(OSObject * target, void * reference, IOExternalMethodArguments * arguments)
 {
     uint64_t ctlcode = *arguments->scalarInput;
-	org_acme_LoopDriver* driver = (org_acme_LoopDriver*) target;
+    org_acme_LoopDriver* driver = (org_acme_LoopDriver*) target;
     
     switch (ctlcode) {
-        case kLoopDriverCTL_Complete: {
-            struct UserIORequest* arg = (struct UserIORequest*) arguments->structureInput;
-            driver->completeRequest(arg);
-            return kIOReturnSuccess;
-        }
+    case kLoopDriverCTL_Complete: {
+        struct UserIORequest* arg = (struct UserIORequest*) arguments->structureInput;
+        driver->completeRequest(arg);
+        return kIOReturnSuccess;
+    }
             
-        default: {
-            LOOP_ASSERT(0 && "Unknown ioctl");
-            return kIOReturnUnsupported;    // Shut up GCC
-        }
+    default: {
+        LOOP_ASSERT(0 && "Unknown ioctl");
+        return kIOReturnUnsupported;    // Shut up GCC
+    }
+            
     };
 }
 

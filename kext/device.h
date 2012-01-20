@@ -78,7 +78,7 @@ public:
 	
 private:
 	
-    org_acme_LoopDriver*	mDriver;
+    org_acme_LoopDriver*    mDriver;
     bool                    mLocked;
 };
 

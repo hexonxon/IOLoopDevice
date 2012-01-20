@@ -73,7 +73,7 @@ protected:
     // Static CTL dispatcher.
     // We prefer linux-style ioctl dispatch from a single static function.
     // Selector that gues into externalMethod is our magic value while real CTL code is stored in scalar argument
-	static IOReturn sIOCTL(OSObject * target, void * reference, IOExternalMethodArguments * arguments);
+    static IOReturn sIOCTL(OSObject * target, void * reference, IOExternalMethodArguments * arguments);
 	
 private:
     
