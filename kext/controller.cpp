@@ -28,9 +28,6 @@ bool org_acme_LoopController::start(IOService* provider)
 {
     LOOP_TRACE;
     this->registerService();
-    
-    LOOP_IOLOG("Sizeof UserIORequest: %lu\n", sizeof(struct UserIORequest));
-    
     return IOService::start(provider);
 }
 
@@ -38,7 +35,6 @@ bool org_acme_LoopController::start(IOService* provider)
 void org_acme_LoopController::stop(IOService* provider)
 {
     LOOP_TRACE;
-
     IOService::stop(provider);
 }
 
@@ -46,7 +42,6 @@ void org_acme_LoopController::stop(IOService* provider)
 void org_acme_LoopController::free()
 {
     LOOP_TRACE;
-
     IOService::free();
 }
 
@@ -114,13 +109,13 @@ IOReturn org_acme_LoopControllerClient::externalMethod(uint32_t selector, IOExte
     struct IOExternalMethodDispatch d = { 
         sIOCTL, 
         arguments->scalarInputCount,
-		arguments->structureInputSize,
-		arguments->scalarOutputCount,
-		arguments->structureOutputSize 
+        arguments->structureInputSize,
+        arguments->scalarOutputCount,
+        arguments->structureOutputSize 
     };
         
-	target = mController;
-	return IOUserClient::externalMethod(selector, arguments, &d, target, reference);
+    target = mController;
+    return IOUserClient::externalMethod(selector, arguments, &d, target, reference);
 }
 
 
@@ -130,15 +125,16 @@ IOReturn org_acme_LoopControllerClient::sIOCTL(OSObject * target, void * referen
 	org_acme_LoopController* controller = (org_acme_LoopController*) target;
     
     switch (ctlcode) {
-        case kLoopCTL_Attach: {
-            struct LoopAttachCtl* arg = (struct LoopAttachCtl*) arguments->structureInput;
-            return controller->loopAttach(arg);
-        }
+    case kLoopCTL_Attach: {
+        struct LoopAttachCtl* arg = (struct LoopAttachCtl*) arguments->structureInput;
+        return controller->loopAttach(arg);
+    }
             
-        default: {
-            LOOP_ASSERT(0 && "Unknown ioctl");
-            return kIOReturnUnsupported;    // Shut up GCC
-        }
+    default: {
+        LOOP_ASSERT(0 && "Unknown ioctl");
+        return kIOReturnUnsupported;    // Shut up GCC
+    }
+            
     };
 }
 

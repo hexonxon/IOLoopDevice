@@ -76,17 +76,6 @@ bool org_acme_LoopDriver::init(UInt64 nblocks, bool readonly, int pid)
     
     client_class->release();
     
-    if (0 != BCAlgInit(kBC_AES, kBCMode_CBC, &mAlg)) {
-        LOOP_IOLOG("Could not initialize algorithm\n");
-        return false;
-    }
-    
-    char key[0xff];
-    if (0 != BCAlgSetKey(&mAlg, key, sizeof(key))) {
-        LOOP_IOLOG("Could not set algorithm key\n");
-        return false;
-    }
-    
     mTotalBlocks = nblocks;
     mReadOnly = readonly;
     mTask = NULL;
@@ -142,10 +131,10 @@ IOReturn org_acme_LoopDriver::helperProcessAttached(mach_port_t port, task_t tas
     
     mDevice = device;
     
-	// attach got +1 refcount.
-	// if we err somewhere after that detach will occur for us, no need to release anything.
-	device->release();
-	device->registerService();	
+    // attach got +1 refcount.
+    // if we err somewhere after that detach will occur for us, no need to release anything.
+    device->release();
+    device->registerService();	
     
     return kIOReturnSuccess;
 }
@@ -176,7 +165,6 @@ void org_acme_LoopDriver::completeRequest(UserIORequest* request)
         if (io->buffer->getDirection() == kIODirectionIn) {
             // read completion
             // decrypt and copy data to original caller buffer
-            BCAlgDecrypt(&mAlg, request->offset, NULL, (char*)io->data->getBytesNoCopy(), (unsigned)io->data->getLength());
             io->buffer->writeBytes(0, io->data->getBytesNoCopy(), io->buffer->getLength());
         } else {
             // write completion
@@ -227,8 +215,6 @@ IOReturn org_acme_LoopDriver::createRequest(IOMemoryDescriptor *buffer, UInt64 b
             error = kIOReturnIOError;
             goto ERROR_OUT;
         }
-        
-        BCAlgEncrypt(&mAlg, block, NULL, (char*) sharedBuffer->getBytesNoCopy(), (unsigned) buffer->getLength());
     }
     
     userMapping = sharedBuffer->createMappingInTask(mTask, NULL, kIOMapAnywhere);
@@ -316,7 +302,7 @@ bool org_acme_LoopDriver::terminate(IOOptionBits options)
 IOReturn org_acme_LoopDriver::eject()
 {
     this->terminate(kIOServiceRequired);
-	return kIOReturnSuccess;
+    return kIOReturnSuccess;
 }
 
 

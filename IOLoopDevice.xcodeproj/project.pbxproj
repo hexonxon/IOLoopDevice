@@ -32,14 +32,6 @@
 		5C5A776D14C6D994009E579D /* build.h in Headers */ = {isa = PBXBuildFile; fileRef = 5C5A776C14C6D994009E579D /* build.h */; };
 		5C5A776F14C6DD7E009E579D /* driver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5C5A776E14C6DD7E009E579D /* driver.cpp */; };
 		5C5A777114C6DDC4009E579D /* driver.h in Headers */ = {isa = PBXBuildFile; fileRef = 5C5A777014C6DDC4009E579D /* driver.h */; };
-		5C95722A14C981D8001AF2BD /* aes.c in Sources */ = {isa = PBXBuildFile; fileRef = 5C95720F14C9806F001AF2BD /* aes.c */; };
-		5C95722B14C981DB001AF2BD /* rijn.c in Sources */ = {isa = PBXBuildFile; fileRef = 5C95721414C9806F001AF2BD /* rijn.c */; };
-		5C95722C14C981DF001AF2BD /* gfmul.c in Sources */ = {isa = PBXBuildFile; fileRef = 5C95721D14C9806F001AF2BD /* gfmul.c */; };
-		5C95722D14C981E3001AF2BD /* xts.c in Sources */ = {isa = PBXBuildFile; fileRef = 5C95722814C9806F001AF2BD /* xts.c */; };
-		5C95722E14C981E8001AF2BD /* mode.c in Sources */ = {isa = PBXBuildFile; fileRef = 5C95722314C9806F001AF2BD /* mode.c */; };
-		5C95722F14C981EB001AF2BD /* lrw.c in Sources */ = {isa = PBXBuildFile; fileRef = 5C95722014C9806F001AF2BD /* lrw.c */; };
-		5C95723014C981ED001AF2BD /* cbc.c in Sources */ = {isa = PBXBuildFile; fileRef = 5C95721B14C9806F001AF2BD /* cbc.c */; };
-		5C95723114C981F0001AF2BD /* alg.c in Sources */ = {isa = PBXBuildFile; fileRef = 5C9571DB14C9806F001AF2BD /* alg.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,72 +81,6 @@
 		5C5A777014C6DDC4009E579D /* driver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = driver.h; sourceTree = "<group>"; };
 		5C9571D714C97B40001AF2BD /* IOLoopDevice.kext */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IOLoopDevice.kext; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C9571D814C97B40001AF2BD /* losetup */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = losetup; sourceTree = BUILT_PRODUCTS_DIR; };
-		5C9571DB14C9806F001AF2BD /* alg.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = alg.c; sourceTree = "<group>"; };
-		5C9571DC14C9806F001AF2BD /* alg.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = alg.h; sourceTree = "<group>"; };
-		5C9571DF14C9806F001AF2BD /* 3des.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = 3des.c; sourceTree = "<group>"; };
-		5C9571E014C9806F001AF2BD /* bc_3des.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bc_3des.h; sourceTree = "<group>"; };
-		5C9571E114C9806F001AF2BD /* bc_des.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = bc_des.c; sourceTree = "<group>"; };
-		5C9571E214C9806F001AF2BD /* bc_des.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bc_des.h; sourceTree = "<group>"; };
-		5C9571E314C9806F001AF2BD /* des_tbl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = des_tbl.h; sourceTree = "<group>"; };
-		5C9571E414C9806F001AF2BD /* Makefile */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
-		5C9571E614C9806F001AF2BD /* aes.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = aes.c; sourceTree = "<group>"; };
-		5C9571E714C9806F001AF2BD /* aes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = aes.h; sourceTree = "<group>"; };
-		5C9571E814C9806F001AF2BD /* aes_hw_32.s */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.asm; path = aes_hw_32.s; sourceTree = "<group>"; };
-		5C9571E914C9806F001AF2BD /* aes_hw_64.s */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.asm; path = aes_hw_64.s; sourceTree = "<group>"; };
-		5C9571EA14C9806F001AF2BD /* aes_tab.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = aes_tab.h; sourceTree = "<group>"; };
-		5C9571EB14C9806F001AF2BD /* aeshw_test.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = aeshw_test.c; sourceTree = "<group>"; };
-		5C9571EC14C9806F001AF2BD /* bc_aesni.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = bc_aesni.c; sourceTree = "<group>"; };
-		5C9571ED14C9806F001AF2BD /* bc_aesni.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bc_aesni.h; sourceTree = "<group>"; };
-		5C9571EE14C9806F001AF2BD /* Makefile */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
-		5C9571EF14C9806F001AF2BD /* Makefile.test */ = {isa = PBXFileReference; lastKnownFileType = text; path = Makefile.test; sourceTree = "<group>"; };
-		5C9571F114C9806F001AF2BD /* bc_bf128.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bc_bf128.h; sourceTree = "<group>"; };
-		5C9571F214C9806F001AF2BD /* bf128.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = bf128.c; sourceTree = "<group>"; };
-		5C9571F314C9806F001AF2BD /* Makefile */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
-		5C9571F514C9806F001AF2BD /* bc_bf448.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bc_bf448.h; sourceTree = "<group>"; };
-		5C9571F614C9806F001AF2BD /* bf448.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = bf448.c; sourceTree = "<group>"; };
-		5C9571F714C9806F001AF2BD /* Makefile */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
-		5C9571F914C9806F001AF2BD /* bc_bfish.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bc_bfish.h; sourceTree = "<group>"; };
-		5C9571FA14C9806F001AF2BD /* blowfish.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = blowfish.c; sourceTree = "<group>"; };
-		5C9571FB14C9806F001AF2BD /* Makefile */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
-		5C9571FD14C9806F001AF2BD /* bc_cast.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bc_cast.h; sourceTree = "<group>"; };
-		5C9571FE14C9806F001AF2BD /* bc_casti.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bc_casti.h; sourceTree = "<group>"; };
-		5C9571FF14C9806F001AF2BD /* cast.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = cast.c; sourceTree = "<group>"; };
-		5C95720014C9806F001AF2BD /* Makefile */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
-		5C95720214C9806F001AF2BD /* bc_des.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bc_des.h; sourceTree = "<group>"; };
-		5C95720314C9806F001AF2BD /* des.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = des.c; sourceTree = "<group>"; };
-		5C95720414C9806F001AF2BD /* des_tbl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = des_tbl.h; sourceTree = "<group>"; };
-		5C95720514C9806F001AF2BD /* Makefile */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
-		5C95720714C9806F001AF2BD /* bc_gost.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bc_gost.h; sourceTree = "<group>"; };
-		5C95720814C9806F001AF2BD /* gost.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = gost.c; sourceTree = "<group>"; };
-		5C95720914C9806F001AF2BD /* Makefile */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
-		5C95720B14C9806F001AF2BD /* bc_idea.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bc_idea.h; sourceTree = "<group>"; };
-		5C95720C14C9806F001AF2BD /* idea.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = idea.c; sourceTree = "<group>"; };
-		5C95720D14C9806F001AF2BD /* Makefile */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
-		5C95720F14C9806F001AF2BD /* aes.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = aes.c; sourceTree = "<group>"; };
-		5C95721014C9806F001AF2BD /* aes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = aes.h; sourceTree = "<group>"; };
-		5C95721114C9806F001AF2BD /* aes_tab.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = aes_tab.h; sourceTree = "<group>"; };
-		5C95721214C9806F001AF2BD /* bc_rijn.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bc_rijn.h; sourceTree = "<group>"; };
-		5C95721314C9806F001AF2BD /* Makefile */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
-		5C95721414C9806F001AF2BD /* rijn.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = rijn.c; sourceTree = "<group>"; };
-		5C95721614C9806F001AF2BD /* bc_tfish.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = bc_tfish.c; sourceTree = "<group>"; };
-		5C95721714C9806F001AF2BD /* bc_tfish.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bc_tfish.h; sourceTree = "<group>"; };
-		5C95721814C9806F001AF2BD /* Makefile */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
-		5C95721914C9806F001AF2BD /* table.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = table.h; sourceTree = "<group>"; };
-		5C95721A14C9806F001AF2BD /* assert.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = assert.h; sourceTree = "<group>"; };
-		5C95721B14C9806F001AF2BD /* cbc.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = cbc.c; sourceTree = "<group>"; };
-		5C95721C14C9806F001AF2BD /* cipher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = cipher.h; sourceTree = "<group>"; };
-		5C95721D14C9806F001AF2BD /* gfmul.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = gfmul.c; sourceTree = "<group>"; };
-		5C95721E14C9806F001AF2BD /* gfmul.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = gfmul.h; sourceTree = "<group>"; };
-		5C95721F14C9806F001AF2BD /* intsize.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = intsize.h; sourceTree = "<group>"; };
-		5C95722014C9806F001AF2BD /* lrw.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = lrw.c; sourceTree = "<group>"; };
-		5C95722114C9806F001AF2BD /* Makefile */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
-		5C95722214C9806F001AF2BD /* memory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = memory.h; sourceTree = "<group>"; };
-		5C95722314C9806F001AF2BD /* mode.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = mode.c; sourceTree = "<group>"; };
-		5C95722414C9806F001AF2BD /* mode.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mode.h; sourceTree = "<group>"; };
-		5C95722514C9806F001AF2BD /* noop.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = noop.c; sourceTree = "<group>"; };
-		5C95722614C9806F001AF2BD /* utils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = utils.h; sourceTree = "<group>"; };
-		5C95722714C9806F001AF2BD /* wintypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = wintypes.h; sourceTree = "<group>"; };
-		5C95722814C9806F001AF2BD /* xts.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = xts.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,7 +102,6 @@
 				5C5A775714C6D2A1009E579D /* Kernel.framework */,
 				5C5828C914C822AC00B3711B /* IOKit.framework */,
 				5C5828C714C822A600B3711B /* CoreFoundation.framework */,
-				5C9571DA14C9806F001AF2BD /* crypto */,
 				5C5A773114C6CF1F009E579D /* kext */,
 				5C5828AC14C81AF600B3711B /* losetup.c */,
 				5C5828AA14C8154B00B3711B /* loopdev.sh */,
@@ -200,175 +125,6 @@
 				5C5A776514C6D2C7009E579D /* Info.plist */,
 			);
 			path = kext;
-			sourceTree = "<group>";
-		};
-		5C9571DA14C9806F001AF2BD /* crypto */ = {
-			isa = PBXGroup;
-			children = (
-				5C9571DB14C9806F001AF2BD /* alg.c */,
-				5C9571DC14C9806F001AF2BD /* alg.h */,
-				5C9571DD14C9806F001AF2BD /* algs */,
-				5C95721A14C9806F001AF2BD /* assert.h */,
-				5C95721B14C9806F001AF2BD /* cbc.c */,
-				5C95721C14C9806F001AF2BD /* cipher.h */,
-				5C95721D14C9806F001AF2BD /* gfmul.c */,
-				5C95721E14C9806F001AF2BD /* gfmul.h */,
-				5C95721F14C9806F001AF2BD /* intsize.h */,
-				5C95722014C9806F001AF2BD /* lrw.c */,
-				5C95722114C9806F001AF2BD /* Makefile */,
-				5C95722214C9806F001AF2BD /* memory.h */,
-				5C95722314C9806F001AF2BD /* mode.c */,
-				5C95722414C9806F001AF2BD /* mode.h */,
-				5C95722514C9806F001AF2BD /* noop.c */,
-				5C95722614C9806F001AF2BD /* utils.h */,
-				5C95722714C9806F001AF2BD /* wintypes.h */,
-				5C95722814C9806F001AF2BD /* xts.c */,
-			);
-			path = crypto;
-			sourceTree = "<group>";
-		};
-		5C9571DD14C9806F001AF2BD /* algs */ = {
-			isa = PBXGroup;
-			children = (
-				5C9571DE14C9806F001AF2BD /* 3des */,
-				5C9571E514C9806F001AF2BD /* aesni */,
-				5C9571F014C9806F001AF2BD /* bf128 */,
-				5C9571F414C9806F001AF2BD /* bf448 */,
-				5C9571F814C9806F001AF2BD /* blowfish */,
-				5C9571FC14C9806F001AF2BD /* cast */,
-				5C95720114C9806F001AF2BD /* des */,
-				5C95720614C9806F001AF2BD /* gost */,
-				5C95720A14C9806F001AF2BD /* idea */,
-				5C95720E14C9806F001AF2BD /* rijn */,
-				5C95721514C9806F001AF2BD /* twofish */,
-			);
-			path = algs;
-			sourceTree = "<group>";
-		};
-		5C9571DE14C9806F001AF2BD /* 3des */ = {
-			isa = PBXGroup;
-			children = (
-				5C9571DF14C9806F001AF2BD /* 3des.c */,
-				5C9571E014C9806F001AF2BD /* bc_3des.h */,
-				5C9571E114C9806F001AF2BD /* bc_des.c */,
-				5C9571E214C9806F001AF2BD /* bc_des.h */,
-				5C9571E314C9806F001AF2BD /* des_tbl.h */,
-				5C9571E414C9806F001AF2BD /* Makefile */,
-			);
-			path = 3des;
-			sourceTree = "<group>";
-		};
-		5C9571E514C9806F001AF2BD /* aesni */ = {
-			isa = PBXGroup;
-			children = (
-				5C9571E614C9806F001AF2BD /* aes.c */,
-				5C9571E714C9806F001AF2BD /* aes.h */,
-				5C9571E814C9806F001AF2BD /* aes_hw_32.s */,
-				5C9571E914C9806F001AF2BD /* aes_hw_64.s */,
-				5C9571EA14C9806F001AF2BD /* aes_tab.h */,
-				5C9571EB14C9806F001AF2BD /* aeshw_test.c */,
-				5C9571EC14C9806F001AF2BD /* bc_aesni.c */,
-				5C9571ED14C9806F001AF2BD /* bc_aesni.h */,
-				5C9571EE14C9806F001AF2BD /* Makefile */,
-				5C9571EF14C9806F001AF2BD /* Makefile.test */,
-			);
-			path = aesni;
-			sourceTree = "<group>";
-		};
-		5C9571F014C9806F001AF2BD /* bf128 */ = {
-			isa = PBXGroup;
-			children = (
-				5C9571F114C9806F001AF2BD /* bc_bf128.h */,
-				5C9571F214C9806F001AF2BD /* bf128.c */,
-				5C9571F314C9806F001AF2BD /* Makefile */,
-			);
-			path = bf128;
-			sourceTree = "<group>";
-		};
-		5C9571F414C9806F001AF2BD /* bf448 */ = {
-			isa = PBXGroup;
-			children = (
-				5C9571F514C9806F001AF2BD /* bc_bf448.h */,
-				5C9571F614C9806F001AF2BD /* bf448.c */,
-				5C9571F714C9806F001AF2BD /* Makefile */,
-			);
-			path = bf448;
-			sourceTree = "<group>";
-		};
-		5C9571F814C9806F001AF2BD /* blowfish */ = {
-			isa = PBXGroup;
-			children = (
-				5C9571F914C9806F001AF2BD /* bc_bfish.h */,
-				5C9571FA14C9806F001AF2BD /* blowfish.c */,
-				5C9571FB14C9806F001AF2BD /* Makefile */,
-			);
-			path = blowfish;
-			sourceTree = "<group>";
-		};
-		5C9571FC14C9806F001AF2BD /* cast */ = {
-			isa = PBXGroup;
-			children = (
-				5C9571FD14C9806F001AF2BD /* bc_cast.h */,
-				5C9571FE14C9806F001AF2BD /* bc_casti.h */,
-				5C9571FF14C9806F001AF2BD /* cast.c */,
-				5C95720014C9806F001AF2BD /* Makefile */,
-			);
-			path = cast;
-			sourceTree = "<group>";
-		};
-		5C95720114C9806F001AF2BD /* des */ = {
-			isa = PBXGroup;
-			children = (
-				5C95720214C9806F001AF2BD /* bc_des.h */,
-				5C95720314C9806F001AF2BD /* des.c */,
-				5C95720414C9806F001AF2BD /* des_tbl.h */,
-				5C95720514C9806F001AF2BD /* Makefile */,
-			);
-			path = des;
-			sourceTree = "<group>";
-		};
-		5C95720614C9806F001AF2BD /* gost */ = {
-			isa = PBXGroup;
-			children = (
-				5C95720714C9806F001AF2BD /* bc_gost.h */,
-				5C95720814C9806F001AF2BD /* gost.c */,
-				5C95720914C9806F001AF2BD /* Makefile */,
-			);
-			path = gost;
-			sourceTree = "<group>";
-		};
-		5C95720A14C9806F001AF2BD /* idea */ = {
-			isa = PBXGroup;
-			children = (
-				5C95720B14C9806F001AF2BD /* bc_idea.h */,
-				5C95720C14C9806F001AF2BD /* idea.c */,
-				5C95720D14C9806F001AF2BD /* Makefile */,
-			);
-			path = idea;
-			sourceTree = "<group>";
-		};
-		5C95720E14C9806F001AF2BD /* rijn */ = {
-			isa = PBXGroup;
-			children = (
-				5C95720F14C9806F001AF2BD /* aes.c */,
-				5C95721014C9806F001AF2BD /* aes.h */,
-				5C95721114C9806F001AF2BD /* aes_tab.h */,
-				5C95721214C9806F001AF2BD /* bc_rijn.h */,
-				5C95721314C9806F001AF2BD /* Makefile */,
-				5C95721414C9806F001AF2BD /* rijn.c */,
-			);
-			path = rijn;
-			sourceTree = "<group>";
-		};
-		5C95721514C9806F001AF2BD /* twofish */ = {
-			isa = PBXGroup;
-			children = (
-				5C95721614C9806F001AF2BD /* bc_tfish.c */,
-				5C95721714C9806F001AF2BD /* bc_tfish.h */,
-				5C95721814C9806F001AF2BD /* Makefile */,
-				5C95721914C9806F001AF2BD /* table.h */,
-			);
-			path = twofish;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -461,14 +217,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5C95722A14C981D8001AF2BD /* aes.c in Sources */,
-				5C95722B14C981DB001AF2BD /* rijn.c in Sources */,
-				5C95722C14C981DF001AF2BD /* gfmul.c in Sources */,
-				5C95722D14C981E3001AF2BD /* xts.c in Sources */,
-				5C95722F14C981EB001AF2BD /* lrw.c in Sources */,
-				5C95723014C981ED001AF2BD /* cbc.c in Sources */,
-				5C95722E14C981E8001AF2BD /* mode.c in Sources */,
-				5C95723114C981F0001AF2BD /* alg.c in Sources */,
 				5C5A776714C6D2E7009E579D /* controller.cpp in Sources */,
 				5C5A776914C6D57A009E579D /* device.cpp in Sources */,
 				5C5A776F14C6DD7E009E579D /* driver.cpp in Sources */,

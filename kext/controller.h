@@ -22,22 +22,22 @@ public:
     /**
      * IOService constructor.
      */
-	bool init(OSDictionary* props);
+    bool init(OSDictionary* props);
 	
-	/**
-	 * Activates and publishes controller to start accepting user requests.
-	 */
-	bool start(IOService* privider);
+    /**
+     * Activates and publishes controller to start accepting user requests.
+     */
+    bool start(IOService* privider);
 	
-	/**
-	 * Deactivate controller and stop accepting requests.
-	 */
-	void stop(IOService* provider);
+    /**
+     * Deactivate controller and stop accepting requests.
+     */
+    void stop(IOService* provider);
 
     /**
      * IOService destructor.
      */
-	void free();
+    void free();
 	
 
 protected:
@@ -65,7 +65,7 @@ public:
 
     virtual bool start(IOService* provider);
     
-	virtual IOReturn externalMethod(uint32_t selector, IOExternalMethodArguments* arguments, IOExternalMethodDispatch* dispatch = 0, OSObject* target = 0, void* reference = 0);
+    virtual IOReturn externalMethod(uint32_t selector, IOExternalMethodArguments* arguments, IOExternalMethodDispatch* dispatch = 0, OSObject* target = 0, void* reference = 0);
 	
 	
 protected:

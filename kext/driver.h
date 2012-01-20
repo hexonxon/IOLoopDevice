@@ -10,7 +10,6 @@
 #include <IOKit/IOUserClient.h>
 #include <IOKit/storage/IOStorage.h>
 
-#include "crypto/alg.h"
 
 struct UserIORequest;
 class org_acme_LoopDevice;
@@ -48,20 +47,20 @@ public:
     virtual bool terminate(IOOptionBits options = 0);
 
     /**
-	 * Create new async IO request.
-	 */
-	IOReturn createRequest(IOMemoryDescriptor* buffer, UInt64 block, UInt64 nblks, IOStorageCompletion* completion);
+     * Create new async IO request.
+     */
+    IOReturn createRequest(IOMemoryDescriptor* buffer, UInt64 block, UInt64 nblks, IOStorageCompletion* completion);
 		
-	/**
-	 * Eject disk.
-	 * Halt all processing and terminate.
-	 */
-	IOReturn eject();
+    /**
+     * Eject disk.
+     * Halt all processing and terminate.
+     */
+    IOReturn eject();
 	
-	/**
-	 * Get device size in blocks.
-	 */
-	UInt64 getSize() {
+    /**
+     * Get device size in blocks.
+     */
+    UInt64 getSize() {
         return mTotalBlocks;
     }
 		
@@ -102,7 +101,6 @@ private:
     bool                    mReadOnly;
     mach_port_t             mPort;
     task_t                  mTask;
-    BCAlg                   mAlg;
 };
 
 
@@ -116,11 +114,11 @@ public:
     
     virtual bool start(IOService* provider);
 	
-	virtual bool initWithTask(task_t owningTask, void* securityToken, UInt32 type, OSDictionary* properties);
+    virtual bool initWithTask(task_t owningTask, void* securityToken, UInt32 type, OSDictionary* properties);
     
     virtual IOReturn clientClose(void);
     
-	virtual IOReturn clientDied(void);
+    virtual IOReturn clientDied(void);
     
     virtual IOReturn registerNotificationPort(mach_port_t port, UInt32 type, io_user_reference_t refCon);
     
@@ -132,7 +130,7 @@ protected:
     // Static CTL dispatcher.
     // We prefer linux-style ioctl dispatch from a single static function.
     // Selector that gues into externalMethod is our magic value while real CTL code is stored in scalar argument
-	static IOReturn sIOCTL(OSObject * target, void * reference, IOExternalMethodArguments * arguments);
+    static IOReturn sIOCTL(OSObject * target, void * reference, IOExternalMethodArguments * arguments);
 	
 private:
     
